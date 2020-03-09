@@ -57,32 +57,50 @@ class SpellDashboard extends React.Component {
             )
     }
 
+    renderDescription() {
+        return (
+            <div className="spell-description-paragraphs">
+                {Object.values(this.state.description).map((paragraph,idx) => {
+                    return (
+                        <p key={idx}>{paragraph}</p>
+                    )
+                })}
+            </div>
+        );
+    }
+
 
     render() {
+
+        const {inputVal, name, level, components, concentration, castingTime, range, duration, higherLevel, page, school} = this.state;
+
         return (
             <div className="spell-dashboard-container">
                 <input type="text" 
                     placeholder="Search..."
                     onChange={this.handleInput}
-                    value={this.state.inputVal}
+                    value={inputVal}
                 />
                 <button onClick={this.handleSearch}>Find Spell</button>
                 <div className="spell-dashaboard">
-                    <h1>{this.state.name}</h1>
+                    <h1>{name}</h1>
                     <div className="spell-requirements">
-                        <p>Spell Level: {this.state.level}</p>
-                        <p>Components: {this.state.components}</p>
-                        <p>Concentration: {this.state.concentration ? `Yes` : `No`}</p>
+                        <p><b>Spell Level: </b>{level}</p>
+                        <p><b>Components: </b>{components}</p>
+                        <p><b>Concentration: </b>{concentration ? `Yes` : `No`}</p>
                     </div>
                     <div className="spell-stats">
-                        <p>Casting Time: {this.state.castingTime}</p>
-                        <p>Range: {this.state.range}</p>
-                        <p>Duration: {this.state.duration}</p>
+                        <p><b>Casting Time: </b>{castingTime}</p>
+                        <p><b>Range: </b>{range}</p>
+                        <p><b>Duration: </b>{duration}</p>
                     </div>
-                    <p>{this.state.description}</p>
-                    <p>At higher levels: {this.state.higherLevel}</p>
-                    <p>Book: {this.state.page}</p>
-                    <p>School of Magic: {this.state.school}</p>
+                    <h2>Description</h2>
+                    <div className="spell-description">
+                        {this.renderDescription()}
+                    </div>
+                    <p><b>At higher levels: </b>{higherLevel}</p>
+                    <p><b>Book: </b>{page}</p>
+                    <p><b>School of Magic: </b>{school}</p>
                 </div>
             </div>
         )

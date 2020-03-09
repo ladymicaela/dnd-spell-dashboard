@@ -1,6 +1,10 @@
 body {
     padding: 20px;
+    background-image: url("./shley-tree-1.png");
+    /* background-color: teal; */
 }
+
+/* SPELL DASHBOARD STYLING */
 
 .spell-dashboard-container {
     display: flex;
@@ -16,8 +20,11 @@ body {
 .spell-dashboard {
     display: flex;
     flex-direction: column;
-    border: solid 5px black;
-    border-radius: 10px;
+    border: solid 5px transparent;
+    box-shadow: 5px 10px 18px burlywood;
+    border-radius: 20px;
+    background-image: url("./fresh-snow.png");
+    background-color: burlywood;
     padding: 20px;
     min-width: 300px;
     max-width: 550px;

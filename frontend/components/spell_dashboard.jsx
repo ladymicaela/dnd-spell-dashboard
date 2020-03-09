@@ -6,7 +6,7 @@ class SpellDashboard extends React.Component {
         super(props)
         this.state = {
             inputVal: '',
-            name: 'Spell',
+            name: 'Spell Name',
             description: '',
             higherLevel: '',
             page: '',

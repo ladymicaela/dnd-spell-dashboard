@@ -104,9 +104,11 @@ class SpellDashboard extends React.Component {
                     <div className="spell-errors">{this.state.error}</div>
                 </div>
                 <div className="spell-dashboard">
-                    <h1 className="spell-name">{name}</h1>
+                    <div className="spell-dashboard-header">
+                        <h1 className="spell-name">{name}</h1>
+                        <span className="spell-level"><b>Spell Level: </b>{level}</span>
+                    </div>
                     <div className="spell-requirements">
-                        <p><b>Spell Level: </b>{level}</p>
                         <div className="spell-info-header">
                             <div className="spell-info">
                                 <p><b>Casting Time: </b>{castingTime} <i>{ritual ? `(ritual)` : ``}</i></p>

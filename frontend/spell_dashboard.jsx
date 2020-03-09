@@ -17,7 +17,8 @@ class SpellDashboard extends React.Component {
             concentration: '',
             castingTime: '',
             level: '',
-            school: ''
+            school: '',
+            error: ''
         };
 
         this.handleInput = this.handleInput.bind(this);
@@ -27,14 +28,26 @@ class SpellDashboard extends React.Component {
 
     handleInput(event) {
         this.setState({
-            inputVal: event.target.value
+            inputVal: event.target.value,
+            error: ''
         })
     }
 
     handleSearch() {
         let spell = this.state.inputVal;
-        fetch(`http://www.dnd5eapi.co/api/spells/${spell}`)
-            .then(result => result.json())
+        let spellArr = spell.split(" ").map(spell => {
+            return spell.toLowerCase()
+        });
+        let index = spellArr.join('-');
+
+        fetch(`http://www.dnd5eapi.co/api/spells/${index}`)
+            .then(result => {
+                if (result.ok) {
+                    return result.json()
+                } else {
+                    throw new Error('Cannot find spell. Please check spelling.')
+                }
+            })
             .then(
                 (result) => {
                     this.setState({
@@ -50,11 +63,14 @@ class SpellDashboard extends React.Component {
                         level: result.level,
                         school: result.school.name
                     });
-                },
-                (error) => {
-                    console.log(error)
-                }
+                }  
             )
+            .catch( error => {
+                this.setState({
+                    error: error.message
+                })
+            }) 
+
     }
 
     renderDescription() {
@@ -82,6 +98,7 @@ class SpellDashboard extends React.Component {
                     value={inputVal}
                 />
                 <button onClick={this.handleSearch}>Find Spell</button>
+                <div>{this.state.error}</div>
                 <div className="spell-dashaboard">
                     <h1>{name}</h1>
                     <div className="spell-requirements">

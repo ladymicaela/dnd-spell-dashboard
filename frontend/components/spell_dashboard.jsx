@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class SpellDashboard extends React.Component {
 
     constructor(props) {
@@ -89,39 +88,42 @@ class SpellDashboard extends React.Component {
         );
     }
 
-
     render() {
 
         const {inputVal, name, level, components, materials, concentration, ritual, castingTime, range, duration, higherLevel, page, school} = this.state;
 
         return (
             <div className="spell-dashboard-container">
-                <input type="text" 
-                    placeholder="Search..."
-                    onChange={this.handleInput}
-                    value={inputVal}
-                />
-                <button onClick={this.handleSearch}>Find Spell</button>
-                <div>{this.state.error}</div>
-                <div className="spell-dashaboard">
-                    <h1>{name}</h1>
+                <div className="spell-search">
+                    <input type="text" 
+                        placeholder="Search..."
+                        onChange={this.handleInput}
+                        value={inputVal}
+                    />
+                    <button onClick={this.handleSearch}>Find Spell</button>
+                    <div className="spell-errors">{this.state.error}</div>
+                </div>
+                <div className="spell-dashboard">
+                    <h1 className="spell-name">{name}</h1>
                     <div className="spell-requirements">
                         <p><b>Spell Level: </b>{level}</p>
-                        <p><b>Components: </b>{components}</p>
+                        <div className="spell-info-header">
+                            <div className="spell-info">
+                                <p><b>Casting Time: </b>{castingTime} <i>{ritual ? `(ritual)` : ``}</i></p>
+                                <p><b>Components: </b>{components}</p>
+                            </div>
+                            <div className="spell-info">
+                                <p><b>Range: </b>{range}</p>
+                                <p><b>Duration: </b>{duration} <i>{concentration ? `(concentration)` : ``}</i></p>
+                            </div>
+                        </div>
                         <p><b>Materials: </b>{materials}</p>
-                        <p><b>Concentration: </b>{concentration ? `Yes` : `No`}</p>
-                        <p><b>Ritual: </b>{ritual ? `Yes` : `No`}</p>
                     </div>
-                    <div className="spell-stats">
-                        <p><b>Casting Time: </b>{castingTime}</p>
-                        <p><b>Range: </b>{range}</p>
-                        <p><b>Duration: </b>{duration}</p>
-                    </div>
-                    <h2>Description</h2>
+                    <h2 className="spell-description">Description</h2>
                     <div className="spell-description">
                         {this.renderDescription()}
+                        <p><b>At higher levels: </b>{higherLevel}</p>
                     </div>
-                    <p><b>At higher levels: </b>{higherLevel}</p>
                     <p><b>Book: </b>{page}</p>
                     <p><b>School of Magic: </b>{school}</p>
                 </div>

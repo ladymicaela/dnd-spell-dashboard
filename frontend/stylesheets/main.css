@@ -1,0 +1,59 @@
+body {
+    padding: 20px;
+}
+
+.spell-dashboard-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.spell-errors {
+    height: 20px;
+    color: red;
+    padding: 10px 0;
+}
+
+.spell-dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.spell-name {
+    margin: 10px 0;
+}
+
+.spell-requirements {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.spell-info {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.spell-info-header {
+    display: flex;
+}
+
+.spell-info:first-child {
+    width: 35%;
+    min-width: 165px;
+}
+
+.spell-info:last-child {
+    width: 65%;
+    justify-self: center;
+}
+
+.spell-description {
+    width: 75%;
+    text-align: justify;
+}
+
+h2.spell-description {
+    margin: 10px 0;
+}
+

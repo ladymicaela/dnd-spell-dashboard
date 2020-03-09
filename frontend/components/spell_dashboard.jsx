@@ -13,8 +13,10 @@ class SpellDashboard extends React.Component {
             page: '',
             range: '',
             components: '',
+            materials: '',
             duration: '',
             concentration: '',
+            ritual: '',
             castingTime: '',
             level: '',
             school: '',
@@ -57,8 +59,10 @@ class SpellDashboard extends React.Component {
                         page: result.page,
                         range: result.range,
                         components: result.components,
+                        materials: result.material,
                         duration: result.duration,
                         concentration: result.concentration,
+                        ritual: result.ritual,
                         castingTime: result.casting_time,
                         level: result.level,
                         school: result.school.name
@@ -88,7 +92,7 @@ class SpellDashboard extends React.Component {
 
     render() {
 
-        const {inputVal, name, level, components, concentration, castingTime, range, duration, higherLevel, page, school} = this.state;
+        const {inputVal, name, level, components, materials, concentration, ritual, castingTime, range, duration, higherLevel, page, school} = this.state;
 
         return (
             <div className="spell-dashboard-container">
@@ -104,7 +108,9 @@ class SpellDashboard extends React.Component {
                     <div className="spell-requirements">
                         <p><b>Spell Level: </b>{level}</p>
                         <p><b>Components: </b>{components}</p>
+                        <p><b>Materials: </b>{materials}</p>
                         <p><b>Concentration: </b>{concentration ? `Yes` : `No`}</p>
+                        <p><b>Ritual: </b>{ritual ? `Yes` : `No`}</p>
                     </div>
                     <div className="spell-stats">
                         <p><b>Casting Time: </b>{castingTime}</p>

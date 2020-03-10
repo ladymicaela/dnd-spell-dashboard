@@ -19,19 +19,29 @@ class SpellSlots extends React.Component {
             },
             slots: {
                 0: [],
-                1: [true, true, true, true],
-                2: [true, true, true],
-                3: [true, true, true],
-                4: [true, true, true],
-                5: [true, true, true],
-                6: [true, true],
-                7: [true, true],
-                8: [true],
-                9: [true]
+                1: [false, false, false, false],
+                2: [false, false, false],
+                3: [false, false, false],
+                4: [false, false, false],
+                5: [false, false, false],
+                6: [false, false],
+                7: [false, false],
+                8: [false],
+                9: [false]
             }
         }
 
+        this.handleChange = this.handleChange.bind(this);
+
     };
+
+    handleChange(event,spell,idx) {
+        let temp = Object.assign({},this.state.spells);
+        temp[spell][idx] = event.target.value;
+        this.setState({
+            spells: temp
+        })
+    }
 
 
 
@@ -44,7 +54,7 @@ class SpellSlots extends React.Component {
                     Object.keys(this.state.spells).map( (spell, idx) => {
                         return (
                             <div className="spell-level" key={idx}>
-                                <h3 className="spell-level-header">Spell Level: {spell}</h3>
+                                <h3 className="spell-level-header">{idx === 0 ? 'Cantrips' : `Spell Level: ${spell}`}</h3>
                                 <div className="spell-slots">
                                     {this.state.slots[spell].map( (slot, idx) => {
                                         return (
@@ -56,7 +66,13 @@ class SpellSlots extends React.Component {
                                     {
                                         this.state.spells[spell].map( (name, idx) => {
                                             return (
-                                                <input type="text" value={name} key={idx}/>
+                                                <label key={idx} className="spell-icon">
+                                                    <input type="text" 
+                                                        value={name} 
+                                                        onChange={(event) => this.handleChange(event, spell,idx)}
+                                                    />
+                                                    <div className="fas fa-magic" onClick={() => this.props.spellSearch(name)}></div>
+                                                </label>
                                             )
                                         })
                                     }

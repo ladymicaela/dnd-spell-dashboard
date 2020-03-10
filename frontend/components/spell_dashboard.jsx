@@ -25,6 +25,7 @@ class SpellDashboard extends React.Component {
 
         this.handleInput = this.handleInput.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.spellSearch = this.spellSearch.bind(this);
 
     };
 
@@ -33,6 +34,14 @@ class SpellDashboard extends React.Component {
             inputVal: event.target.value,
             error: ''
         })
+    }
+
+    spellSearch(spell) {
+        this.setState({
+            inputVal: spell
+        },
+            this.handleSearch
+        )
     }
 
     handleSearch() {
@@ -103,7 +112,7 @@ class SpellDashboard extends React.Component {
 
         return (
             <div className="spell-dashboard-container">
-                <SpellSlots />
+                <SpellSlots spellSearch={this.spellSearch}/>
                 <div className="spell-search">
                     <input type="text" 
                         placeholder="Search..."

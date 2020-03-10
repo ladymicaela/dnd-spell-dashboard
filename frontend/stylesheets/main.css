@@ -1,6 +1,6 @@
 body {
     padding: 20px;
-    /* background-image: url("background.jpg"); */
+    background-image: url("background.jpg");
 }
 
 /* SPELL DASHBOARD STYLING */
@@ -112,13 +112,23 @@ h2.spell-description {
 .spell-slots-container {
     display: flex;
     flex-wrap: wrap;
+    border: solid 5px lightblue;
+    border-radius: 10px;
+    background-color: lightblue;
+    padding: 5px;
+    justify-content: space-evenly;
+    min-width: 350px;
 }
 
 .spell-level, .spells {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px 0;
+    margin: 0 10px;
+}
+
+.spell-level {
+    margin-bottom: 10px;
 }
 
 .spell-slots {
@@ -129,9 +139,23 @@ h2.spell-description {
 }
 
 .spell-level-header {
-    margin: 5px 0;
+    margin: 0;
 }
 
 .spells input[type="text"] {
-    margin: 2px 0;
+    margin: 2px 5px;
+    outline: none;
+}
+
+.spell-icon {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spell-icon > div {
+    cursor: pointer;
+}
+
+.spell-icon > div:hover {
+    color: blue;
 }

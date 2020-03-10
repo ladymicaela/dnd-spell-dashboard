@@ -42,6 +42,7 @@ body {
     padding: 20px;
     min-width: 350px;
     max-width: 550px;
+    /* width: 350px; */
 }
 
 .spell-dashboard-header {
@@ -51,7 +52,8 @@ body {
 
 .spell-name {
     margin: 10px 0;
-    min-width: 210px;
+    min-width: 230px;
+    width: 230px;
 }
 
 .spell-level {
@@ -71,14 +73,16 @@ body {
 .spell-info-header {
     display: flex;
     min-width: 290px;
+    justify-content: space-between;
 }
 
 .spell-info:first-child {
-    min-width: 210px;
+    min-width: 230px;
 }
 
 .spell-info:last-child {
-    justify-self: center;
+    justify-self: flex-start;
+    min-width: 150px;
 }
 
 .spell-description {

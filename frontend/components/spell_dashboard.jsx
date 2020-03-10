@@ -1,4 +1,5 @@
 import React from 'react';
+import SpellSlots from './spell_slots';
 
 class SpellDashboard extends React.Component {
 
@@ -102,6 +103,7 @@ class SpellDashboard extends React.Component {
 
         return (
             <div className="spell-dashboard-container">
+                <SpellSlots />
                 <div className="spell-search">
                     <input type="text" 
                         placeholder="Search..."

@@ -59,7 +59,7 @@ class SpellDashboard extends React.Component {
         });
         let index = spellArr.join('-');
 
-        fetch(`http://www.dnd5eapi.co/api/spells/${index}`)
+        fetch(`https://www.dnd5eapi.co/api/spells/${index}`)
             .then(result => {
                 if (result.ok) {
                     return result.json()

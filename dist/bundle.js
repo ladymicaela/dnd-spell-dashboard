@@ -184,7 +184,7 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
         return spell.toLowerCase();
       });
       var index = spellArr.join('-');
-      fetch("http://www.dnd5eapi.co/api/spells/".concat(index)).then(function (result) {
+      fetch("https://www.dnd5eapi.co/api/spells/".concat(index)).then(function (result) {
         if (result.ok) {
           return result.json();
         } else {

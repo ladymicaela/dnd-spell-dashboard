@@ -15,10 +15,14 @@ body {
     padding: 5px;
     border-radius: 5px;
     margin: 5px;
+    outline: none;
 }
 
 .spell-search > button {
     cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
 }
 
 .spell-errors {
@@ -36,19 +40,18 @@ body {
     background-image: url("./fresh-snow.png");
     background-color: burlywood;
     padding: 20px;
-    min-width: 300px;
+    min-width: 350px;
     max-width: 550px;
 }
 
 .spell-dashboard-header {
     display: flex;
-    /* justify-content: space-between; */
     align-items: baseline;
 }
 
 .spell-name {
     margin: 10px 0;
-    width: 210px;
+    min-width: 210px;
 }
 
 .spell-level {
@@ -81,6 +84,15 @@ body {
 .spell-description {
     text-align: justify;
     min-width: 290px;
+}
+
+.spell-description-paragraphs {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.spell-description-paragraphs::-webkit-scrollbar {
+    display: none;
 }
 
 h2.spell-description {

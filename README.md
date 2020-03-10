@@ -8,7 +8,7 @@
 
 What could be more fun than combining two things you love doing? For me, those two things would be Coding and Dungeons and Dragons.
 
-In my latest campaign, I am playing a snarky, badass magic wielder. Howver, keeping track of what spells I have, what they actually do, and how many spell slots I have left can be cumbersome. My solution...? A DnD Spell Dashboard!
+In my latest campaign, I am playing a snarky, badass magic wielder. However, keeping track of what spells I have, what they actually do, and how many spell slots I have left can be cumbersome. My solution...? A DnD Spell Dashboard!
 
 ## How it Works
 

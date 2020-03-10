@@ -36,6 +36,14 @@ class SpellDashboard extends React.Component {
 
     handleSearch() {
         let spell = this.state.inputVal;
+
+        if (spell.length === 0) {
+            this.setState({
+                error: "Please enter a spell name."
+            })
+            return;
+        } 
+
         let spellArr = spell.split(" ").map(spell => {
             return spell.toLowerCase()
         });
@@ -66,7 +74,7 @@ class SpellDashboard extends React.Component {
                         level: result.level,
                         school: result.school.name
                     });
-                }  
+                } 
             )
             .catch( error => {
                 this.setState({

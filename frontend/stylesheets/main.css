@@ -1,7 +1,6 @@
 body {
     padding: 20px;
-    background-image: url("./shley-tree-1.png");
-    /* background-color: teal; */
+    background-image: url("");
 }
 
 /* SPELL DASHBOARD STYLING */
@@ -9,6 +8,17 @@ body {
 .spell-dashboard-container {
     display: flex;
     flex-direction: column;
+    font-family: 'Kalam', cursive;
+}
+
+.spell-search > input[type=text] {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.spell-search > button {
+    cursor: pointer;
 }
 
 .spell-errors {
@@ -22,7 +32,7 @@ body {
     flex-direction: column;
     border: solid 5px transparent;
     box-shadow: 5px 10px 18px burlywood;
-    border-radius: 20px;
+    border-radius: 15px 50px;
     background-image: url("./fresh-snow.png");
     background-color: burlywood;
     padding: 20px;
@@ -41,7 +51,7 @@ body {
 }
 
 .spell-level {
-    width: 100px;
+    width: 150px;
 }
 
 .spell-requirements {

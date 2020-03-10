@@ -1,6 +1,6 @@
 # D&D 5e Spell Dashboard
 
-[Live Link](#)
+[Live Link](https://ladymicaela.github.io/dnd-spell-dashboard/frontend/public/index.html)
 
 ![thumbnail](./frontend/stylesheets/thumbnail.png)
 

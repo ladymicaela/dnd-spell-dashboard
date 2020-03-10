@@ -42,12 +42,13 @@ body {
 
 .spell-dashboard-header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: baseline;
 }
 
 .spell-name {
     margin: 10px 0;
+    width: 210px;
 }
 
 .spell-level {

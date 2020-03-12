@@ -52,6 +52,7 @@ body {
 .spell-dashboard-header {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
 }
 
 .spell-name {
@@ -60,8 +61,9 @@ body {
     width: 230px;
 }
 
-.spell-level {
-    width: 150px;
+.spells-level {
+    /* width: 150px; */
+    min-width: 150px;
 }
 
 .spell-requirements {

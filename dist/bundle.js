@@ -261,8 +261,8 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
         className: "spell-dashboard-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "spell-name"
-      }, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "spell-level"
+      }, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "spells-level"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Spell Level: "), level)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "spell-requirements"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

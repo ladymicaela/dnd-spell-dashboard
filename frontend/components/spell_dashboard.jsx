@@ -125,7 +125,7 @@ class SpellDashboard extends React.Component {
                 <div className="spell-dashboard">
                     <div className="spell-dashboard-header">
                         <h1 className="spell-name">{name}</h1>
-                        <span className="spell-level"><b>Spell Level: </b>{level}</span>
+                        <div className="spells-level"><b>Spell Level: </b>{level}</div>
                     </div>
                     <div className="spell-requirements">
                         <div className="spell-info-header">

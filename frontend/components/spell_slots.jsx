@@ -44,9 +44,6 @@ class SpellSlots extends React.Component {
     }
 
 
-
-
-
     render() {
         return (
             <div className="spell-slots-container">

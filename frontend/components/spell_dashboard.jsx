@@ -27,6 +27,8 @@ class SpellDashboard extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
         this.spellSearch = this.spellSearch.bind(this);
 
+        this.myRef = React.createRef();
+
     };
 
     handleInput(event) {
@@ -37,11 +39,18 @@ class SpellDashboard extends React.Component {
     }
 
     spellSearch(spell) {
+        
+        this.myRef.current.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+
         this.setState({
             inputVal: spell
         },
             this.handleSearch
         )
+        
     }
 
     handleSearch() {
@@ -122,7 +131,7 @@ class SpellDashboard extends React.Component {
                     <button onClick={this.handleSearch}>Find Spell</button>
                     <div className="spell-errors">{this.state.error}</div>
                 </div>
-                <div className="spell-dashboard">
+                <div className="spell-dashboard" ref={this.myRef}>
                     <div className="spell-dashboard-header">
                         <h1 className="spell-name">{name}</h1>
                         <div className="spells-level"><b>Spell Level: </b>{level}</div>

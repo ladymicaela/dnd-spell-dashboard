@@ -148,6 +148,7 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
     _this.spellSearch = _this.spellSearch.bind(_assertThisInitialized(_this));
+    _this.myRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return _this;
   }
 
@@ -162,6 +163,10 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "spellSearch",
     value: function spellSearch(spell) {
+      this.myRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
       this.setState({
         inputVal: spell
       }, this.handleSearch);
@@ -256,7 +261,8 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
       }, "Find Spell"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "spell-errors"
       }, this.state.error)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "spell-dashboard"
+        className: "spell-dashboard",
+        ref: this.myRef
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "spell-dashboard-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {

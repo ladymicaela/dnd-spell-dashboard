@@ -145,10 +145,10 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
       school: '',
       error: ''
     };
+    _this.myRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
     _this.spellSearch = _this.spellSearch.bind(_assertThisInitialized(_this));
-    _this.myRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return _this;
   }
 
@@ -162,7 +162,9 @@ var SpellDashboard = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "spellSearch",
-    value: function spellSearch(spell) {
+    value: function spellSearch(e, spell) {
+      e.preventDefault(); //must include this otherwise have to double-click for the auto-scroll to work
+
       this.myRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start"
@@ -406,8 +408,8 @@ var SpellSlots = /*#__PURE__*/function (_React$Component) {
             }
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "fas fa-magic",
-            onClick: function onClick() {
-              return _this2.props.spellSearch(name);
+            onClick: function onClick(e) {
+              return _this2.props.spellSearch(e, name);
             }
           }));
         })));

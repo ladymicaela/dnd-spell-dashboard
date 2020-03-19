@@ -68,7 +68,7 @@ class SpellSlots extends React.Component {
                                                         value={name} 
                                                         onChange={(event) => this.handleChange(event, spell,idx)}
                                                     />
-                                                    <div className="fas fa-magic" onClick={() => this.props.spellSearch(name)}></div>
+                                                    <div className="fas fa-magic" onClick={(e) => this.props.spellSearch(e,name)}></div>
                                                 </label>
                                             )
                                         })

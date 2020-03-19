@@ -23,11 +23,11 @@ class SpellDashboard extends React.Component {
             error: ''
         };
 
+        this.myRef = React.createRef();
+
         this.handleInput = this.handleInput.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
         this.spellSearch = this.spellSearch.bind(this);
-
-        this.myRef = React.createRef();
 
     };
 
@@ -38,8 +38,10 @@ class SpellDashboard extends React.Component {
         })
     }
 
-    spellSearch(spell) {
-        
+    spellSearch(e,spell) {
+
+        e.preventDefault(); //must include this otherwise have to double-click for the auto-scroll to work
+
         this.myRef.current.scrollIntoView({
             behavior: "smooth",
             block: "start"
